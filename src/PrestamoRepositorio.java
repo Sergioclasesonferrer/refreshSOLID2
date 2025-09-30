@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class PrestamoRepositorio implements PrestamoPersistencia{
@@ -6,6 +7,14 @@ public class PrestamoRepositorio implements PrestamoPersistencia{
 
     public PrestamoRepositorio() {
         this.prestamos = new ArrayList<>();
+    }
+
+    public List<Prestamo> getPrestamos() {
+        return prestamos;
+    }
+
+    public void setPrestamos(List<Prestamo> prestamos) {
+        this.prestamos = prestamos;
     }
 
     @Override

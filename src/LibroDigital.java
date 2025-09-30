@@ -8,6 +8,10 @@ public class LibroDigital extends Libro implements Prestable{
         this.disponible = disponible;
     }
 
+    public boolean isDisponible() {
+        return disponible;
+    }
+
     @Override
     public double tarifaBase() {
         return 4.0;
