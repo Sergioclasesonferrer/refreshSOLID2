@@ -12,10 +12,6 @@ public class RecursoRepositorio implements RecursoPersistencia{
         return recursos;
     }
 
-    public void setRecursos(Set<Recurso> recursos) {
-        this.recursos = recursos;
-    }
-
     @Override
     public boolean altaRecurso(Recurso recurso) {
         return recursos.add(recurso);

@@ -8,20 +8,8 @@ public class LibroFisico extends Libro implements Prestable{
         this.ejemplares = ejemplares;
     }
 
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
     public int getEjemplares() {
         return ejemplares;
-    }
-
-    public void setEjemplares(int ejemplares) {
-        this.ejemplares = ejemplares;
     }
 
     @Override

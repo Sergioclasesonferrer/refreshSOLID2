@@ -13,10 +13,6 @@ public class PrestamoRepositorio implements PrestamoPersistencia{
         return prestamos;
     }
 
-    public void setPrestamos(List<Prestamo> prestamos) {
-        this.prestamos = prestamos;
-    }
-
     @Override
     public boolean registrarPrestamo(Prestamo prestamo) {
         return this.prestamos.add(prestamo);
