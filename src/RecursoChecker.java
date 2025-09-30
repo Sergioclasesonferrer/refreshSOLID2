@@ -12,8 +12,7 @@ public class RecursoChecker implements RecursoPersistenciaGet {
     @Override
     public boolean comprobarDisponibilidad(Prestable recurso) {
         if (!contieneRecurso(recurso)) return false;
-        if (!recurso.disponible(prestamos)) return false;
-        return true;
+        return recurso.disponible(prestamos);
     }
 
     @Override
