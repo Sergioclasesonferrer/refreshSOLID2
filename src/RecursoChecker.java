@@ -1,4 +1,4 @@
-public class RecursoChecker implements RecursoPersistenciaGet{
+public class RecursoChecker implements RecursoPersistenciaGet {
     RecursoRepositorio recursos;
 
     public RecursoChecker(RecursoRepositorio recursos) {
@@ -7,8 +7,9 @@ public class RecursoChecker implements RecursoPersistenciaGet{
 
     @Override
     public boolean comprobarDisponibilidad(Recurso recurso) {
-//        return recurso;
-        return false; //BORRA ESTO
+        int num = 0;
+
+        return false;
     }
 
     @Override
