@@ -11,22 +11,8 @@ public class RecursoChecker implements RecursoPersistenciaGet {
 
     @Override
     public boolean comprobarDisponibilidad(Prestable recurso) {
-        int numRecNoDevueltos = 0;
         if (!contieneRecurso(recurso)) return false;
-        if (recurso instanceof LibroDigital) {
-            return ((LibroDigital) recurso).isDisponible();
-        }
-        if (recurso instanceof LibroFisico) {
-            for (Prestamo prestamo : prestamos.getPrestamos()){
-                if(prestamo.getFechaInicio().isBefore(LocalDate.now()) &&
-                prestamo.getFechaFin().isAfter(LocalDate.now()) &&
-                !prestamo.isDevuelto() &&
-                prestamo.getRecurso().equals(recurso)) {
-                    numRecNoDevueltos++;
-                }
-            }
-            if (numRecNoDevueltos >= ((LibroFisico)recurso).getEjemplares()) return false;
-        }
+        if (!recurso.disponible(prestamos)) return false;
         return true;
     }
 

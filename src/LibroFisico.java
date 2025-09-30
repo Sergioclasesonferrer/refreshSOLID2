@@ -1,4 +1,6 @@
-public class LibroFisico extends Libro implements Prestable{
+import java.time.LocalDate;
+
+public class LibroFisico extends Libro implements Prestable {
     private String isbn;
     private int ejemplares;
 
@@ -15,6 +17,20 @@ public class LibroFisico extends Libro implements Prestable{
     @Override
     public double tarifaBase() {
         return 3.0;
+    }
+
+    @Override
+    public boolean disponible(PrestamoRepositorio prestamoRepositorio) {
+        int numRecNoDevueltos = 0;
+        for (Prestamo prestamo : prestamoRepositorio.getPrestamos()) {
+            if (prestamo.getFechaInicio().isBefore(LocalDate.now()) &&
+                    prestamo.getFechaFin().isAfter(LocalDate.now()) &&
+                    !prestamo.isDevuelto()) {
+                numRecNoDevueltos++;
+            }
+        }
+        if (numRecNoDevueltos >= this.getEjemplares()) return false;
+        return true;
     }
 
     @Override
