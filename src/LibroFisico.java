@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class LibroFisico extends Libro implements Prestable {
+public class LibroFisico extends Libro implements PrestableLimitado {
     private String isbn;
     private int ejemplares;
 

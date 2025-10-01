@@ -1,4 +1,4 @@
-public class LibroDigital extends Libro implements Prestable{
+public class LibroDigital extends Libro implements PrestableIlimitado{
     private String isbn;
     private boolean disponible;
 
@@ -14,7 +14,7 @@ public class LibroDigital extends Libro implements Prestable{
     }
 
     @Override
-    public boolean disponible(PrestamoRepositorio prestamoRepositorio) {
+    public boolean disponible() {
         return disponible;
     }
 
